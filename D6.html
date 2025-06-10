@@ -198,20 +198,111 @@
          La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
       */
 
-      const generateTable = function () {};
+      const generateTable = function () {
+        const tbDiv = document.getElementById("tableArea");
+        tbDiv.innerHTML = `<table>
+        <tr>
+          <td>Immagine</td>
+          <td>Nome prodotto</td>
+          <td>Quantità</td>
+          <td>Prezzo</td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src="https://m.media-amazon.com/images/I/717hYJ3jqxL.jpg"
+              style="height: 100px; width: 100px"
+            />
+          </td>
+          <td>Smartphone</td>
+          <td>1</td>
+          <td>500$</td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src="https://m.media-amazon.com/images/I/71B2NJB5sYL.jpg"
+              style="height: 100px; width: 100px"
+            />
+          </td>
+          <td>PC</td>
+          <td>1</td>
+          <td>600$</td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              style="height: 100px; width: 100px"
+              src="https://images.unsplash.com/photo-1506513083865-434a8a207e11?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8"
+            />
+          </td>
+          <td>Libro</td>
+          <td>1</td>
+          <td>15$</td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              style="height: 100px; width: 100px"
+              src="https://www.abbassoprezzo.com/images/detailed/11/711259_8.png"
+            />
+          </td>
+          <td>Tavolo</td>
+          <td>1</td>
+          <td>200$</td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              style="height: 100px; width: 100px"
+              src="https://img.cappellishop.it/Cappello-di-Feltro-Basic-Bogart-by-Lipodo-nero.47931_rf4.jpg"
+            />
+          </td>
+          <td>Cappello</td>
+          <td>1</td>
+          <td>10$</td>
+        </tr>
+      </table>`;
+      };
+
       generateTable();
 
       /* ESERCIZIO 12
          Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
       */
 
-      const addRow = function () {};
+      const addRow = function (url, nome, quant, prezzo) {
+        const tab = document.getElementsByTagName("table");
+        const newtr = document.createElement("tr");
+        const newtd1 = document.createElement("td");
+        const newtd2 = document.createElement("td");
+        const newtd3 = document.createElement("td");
+        const newtd4 = document.createElement("td");
+        const img = document.createElement("img");
+        tab[0].appendChild(newtr);
+        newtr.appendChild(newtd1);
+        newtr.appendChild(newtd2);
+        newtr.appendChild(newtd3);
+        newtr.appendChild(newtd4);
+        newtd1.appendChild(img);
+        img.setAttribute("src", "url");
+
+        newtd2.innerText = nome;
+        newtd3.innerText = quant;
+        newtd4.innerText = prezzo;
+      };
 
       /* ESERCIZIO 14
         Crea una funzione che nasconda le immagini della tabella quando eseguita
       */
 
-      const hideAllImages = function () {};
+      const hideAllImages = function () {
+        const imgs = document.querySelectorAll("table img");
+        console.log(imgs);
+        for (let i = 0; i < imgs.length; i++) {
+          imgs[i].remove();
+        }
+      };
 
       /* EXTRA ESERCIZIO 15
         Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
