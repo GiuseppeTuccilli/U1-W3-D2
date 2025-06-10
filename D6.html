@@ -63,7 +63,11 @@
 
     <div>
       <p>Anche questo testo è per gli esercizi</p>
-      <h2 id="changeMyColor" style="color: #ff00d6">
+      <h2
+        id="changeMyColor"
+        style="color: #ff00d6"
+        onclick="changeColorWithRandom()"
+      >
         Apri questa pagina con VSCode per scoprire gli esercizi
       </h2>
     </div>
@@ -308,7 +312,12 @@
         Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
       */
 
-      const changeColorWithRandom = function () {};
+      const changeColorWithRandom = function () {
+        let ran = Math.random() * 16777215;
+        let col = "#" + ran.toString(16);
+        const h2 = document.getElementById("changeMyColor");
+        h2.setAttribute("color", col);
+      };
     </script>
   </body>
 </html>
