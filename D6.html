@@ -313,10 +313,10 @@
       */
 
       const changeColorWithRandom = function () {
-        let ran = Math.random() * 16777215;
+        let ran = Math.floor(Math.random() * 16777215);
         let col = "#" + ran.toString(16);
         const h2 = document.getElementById("changeMyColor");
-        h2.setAttribute("color", col);
+        h2.style.color = col;
       };
     </script>
   </body>
